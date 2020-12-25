@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://HTTPRequest.gd" type="Script" id=2]
+[ext_resource path="res://http_requester.gd" type="Script" id=1]
 
 [sub_resource type="StyleBoxFlat" id=1]
 
@@ -25,43 +25,42 @@ __meta__ = {
 [node name="HTTP Requester" type="MarginContainer" parent="CanvasLayer/TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 32.0
-margin_right = -4.0
-margin_bottom = -4.0
+margin_left = 8.0
+margin_top = 61.0
+margin_right = -8.0
+margin_bottom = -8.0
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
-
-[node name="HTTPRequest" type="HTTPRequest" parent="CanvasLayer/TabContainer/HTTP Requester"]
-script = ExtResource( 2 )
-urlLineEdit = NodePath("../VSplitContainer/HBoxContainer/LineEdit")
-outputRichTextLabel = NodePath("../VSplitContainer/RichTextLabel")
+lineEditPath = NodePath("VSplitContainer/HBoxContainer/LineEdit")
+richTextLabelPath = NodePath("VSplitContainer/RichTextLabel")
+httpRequestPath = NodePath("HTTPRequest")
 
 [node name="VSplitContainer" type="VBoxContainer" parent="CanvasLayer/TabContainer/HTTP Requester"]
-margin_right = 996.0
-margin_bottom = 544.0
+margin_right = 988.0
+margin_bottom = 511.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/TabContainer/HTTP Requester/VSplitContainer"]
-margin_right = 996.0
-margin_bottom = 24.0
+margin_right = 988.0
+margin_bottom = 45.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button" type="Button" parent="CanvasLayer/TabContainer/HTTP Requester/VSplitContainer/HBoxContainer"]
-margin_right = 143.0
-margin_bottom = 24.0
+margin_right = 254.0
+margin_bottom = 45.0
 text = "SEND HTTP REQUEST"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LineEdit" type="LineEdit" parent="CanvasLayer/TabContainer/HTTP Requester/VSplitContainer/HBoxContainer"]
-margin_left = 147.0
-margin_right = 996.0
-margin_bottom = 24.0
+margin_left = 262.0
+margin_right = 988.0
+margin_bottom = 45.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 text = "https://foothillcs.club/"
@@ -71,9 +70,9 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="CanvasLayer/TabContainer/HTTP Requester/VSplitContainer"]
-margin_top = 28.0
-margin_right = 996.0
-margin_bottom = 42.0
+margin_top = 53.0
+margin_right = 988.0
+margin_bottom = 78.0
 custom_styles/normal = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "~~ OUTPUT ~~"
@@ -84,9 +83,9 @@ __meta__ = {
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/TabContainer/HTTP Requester/VSplitContainer"]
-margin_top = 46.0
-margin_right = 996.0
-margin_bottom = 544.0
+margin_top = 86.0
+margin_right = 988.0
+margin_bottom = 511.0
 focus_mode = 2
 size_flags_vertical = 3
 custom_styles/normal = SubResource( 2 )
@@ -95,22 +94,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="HTTPRequest" type="HTTPRequest" parent="CanvasLayer/TabContainer/HTTP Requester"]
+
 [node name="WebSockets" type="MarginContainer" parent="CanvasLayer/TabContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 32.0
-margin_right = -4.0
-margin_bottom = -4.0
+margin_left = 8.0
+margin_top = 61.0
+margin_right = -8.0
+margin_bottom = -8.0
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Button" type="Button" parent="CanvasLayer/TabContainer/WebSockets"]
-margin_right = 996.0
-margin_bottom = 544.0
+margin_right = 988.0
+margin_bottom = 511.0
 text = "Connect to Websocket"
-[connection signal="request_completed" from="CanvasLayer/TabContainer/HTTP Requester/HTTPRequest" to="CanvasLayer/TabContainer/HTTP Requester/HTTPRequest" method="_on_HTTPRequest_request_completed"]
-[connection signal="pressed" from="CanvasLayer/TabContainer/HTTP Requester/VSplitContainer/HBoxContainer/Button" to="CanvasLayer/TabContainer/HTTP Requester/HTTPRequest" method="_on_Button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabContainer/HTTP Requester/VSplitContainer/HBoxContainer/Button" to="CanvasLayer/TabContainer/HTTP Requester" method="_on_Button_pressed"]
+[connection signal="request_completed" from="CanvasLayer/TabContainer/HTTP Requester/HTTPRequest" to="CanvasLayer/TabContainer/HTTP Requester" method="_on_HTTPRequest_request_completed"]
