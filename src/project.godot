@@ -19,6 +19,14 @@ config/name="TileGame Client"
 run/main_scene="res://root.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/dpi/allow_hidpi=true
+
+[gui]
+
+theme/use_hidpi=true
+
 [rendering]
 
 quality/driver/driver_name="GLES2"
