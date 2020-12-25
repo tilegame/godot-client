@@ -89,6 +89,7 @@ margin_bottom = 511.0
 focus_mode = 2
 size_flags_vertical = 3
 custom_styles/normal = SubResource( 2 )
+bbcode_enabled = true
 selection_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false
