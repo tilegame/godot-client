@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://http_requester.gd" type="Script" id=1]
+[ext_resource path="res://LineEditWithWebPrompt.gd" type="Script" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
 
@@ -65,6 +66,7 @@ grow_horizontal = 2
 size_flags_horizontal = 3
 text = "https://foothillcs.club/"
 align = 3
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
