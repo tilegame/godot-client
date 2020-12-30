@@ -1,13 +1,13 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://http_requester.gd" type="Script" id=1]
-[ext_resource path="res://LineEditWithWebPrompt.gd" type="Script" id=2]
-[ext_resource path="res://TheGame.tscn" type="PackedScene" id=3]
-[ext_resource path="res://TabContainer.gd" type="Script" id=8]
+[ext_resource path="res://container/http_requester.gd" type="Script" id=1]
+[ext_resource path="res://container/LineEditWithWebPrompt.gd" type="Script" id=2]
+[ext_resource path="res://game/TheGame.tscn" type="PackedScene" id=3]
+[ext_resource path="res://container/TabContainer.gd" type="Script" id=8]
+
+[sub_resource type="StyleBoxFlat" id=1]
 
 [sub_resource type="StyleBoxFlat" id=2]
-
-[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.145098, 0.145098, 0.145098, 1 )
 
 [node name="Node2D" type="Node2D"]
@@ -42,7 +42,7 @@ size = Vector2( 988, 511 )
 handle_input_locally = false
 render_target_update_mode = 3
 
-[node name="Node2D" parent="CanvasLayer/TabContainer/Game/Viewport" instance=ExtResource( 3 )]
+[node name="TheGame" parent="CanvasLayer/TabContainer/Game/Viewport" instance=ExtResource( 3 )]
 
 [node name="HTTP Requester" type="MarginContainer" parent="CanvasLayer/TabContainer"]
 visible = false
@@ -97,7 +97,7 @@ __meta__ = {
 margin_top = 53.0
 margin_right = 988.0
 margin_bottom = 78.0
-custom_styles/normal = SubResource( 2 )
+custom_styles/normal = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "~~ OUTPUT ~~"
 align = 1
@@ -112,7 +112,7 @@ margin_right = 988.0
 margin_bottom = 511.0
 focus_mode = 2
 size_flags_vertical = 3
-custom_styles/normal = SubResource( 3 )
+custom_styles/normal = SubResource( 2 )
 bbcode_enabled = true
 selection_enabled = true
 __meta__ = {
