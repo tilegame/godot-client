@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://game/Player.gd" type="Script" id=1]
 [ext_resource path="res://game/TileMap.gd" type="Script" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://img/bow.png" type="Texture" id=9]
 [ext_resource path="res://game/Bow.gd" type="Script" id=10]
 [ext_resource path="res://game/TheGame.gd" type="Script" id=11]
+[ext_resource path="res://img/ClickEventAnimationSpritesheet.png" type="Texture" id=12]
+[ext_resource path="res://game/MouseClickAnimation.gd" type="Script" id=13]
 
 [sub_resource type="TileSet" id=1]
 0/name = "atlas.png 0"
@@ -132,12 +134,47 @@ animations = [ {
 "speed": 24.0
 } ]
 
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 128, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 256, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 384, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 512, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 640, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 768, 0, 128, 128 )
+
 [sub_resource type="SpriteFrames" id=15]
 animations = [ {
-"frames": [  ],
-"loop": true,
+"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
+"loop": false,
 "name": "default",
-"speed": 5.0
+"speed": 24.0
 } ]
 
 [node name="TheGame" type="Node2D"]
@@ -167,3 +204,5 @@ script = ExtResource( 10 )
 
 [node name="MouseClickAnimation" type="AnimatedSprite" parent="."]
 frames = SubResource( 15 )
+frame = 6
+script = ExtResource( 13 )
