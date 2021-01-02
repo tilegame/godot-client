@@ -1,4 +1,5 @@
 extends AnimatedSprite
+class_name Player
 
 const speed = 10
 
