@@ -1,6 +1,6 @@
 extends TabContainer
 
-onready var player := $Game/Viewport/Node2D/Player
+onready var player := $Game/Viewport/TheGame/Player
 
 func _ready() -> void:
 	connect("tab_changed", self, "on_tab_change")
