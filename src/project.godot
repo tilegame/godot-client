@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://game/Player.gd"
+}, {
+"base": "Sprite",
+"class": "Projectile",
+"language": "GDScript",
+"path": "res://game/projectile/Projectile.gd"
 } ]
 _global_script_class_icons={
 "MouseClickAnimation": "",
-"Player": ""
+"Player": "",
+"Projectile": ""
 }
 
 [application]
